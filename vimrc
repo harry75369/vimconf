@@ -76,6 +76,8 @@ if executable('ag')
   let g:ackprg='ag --vimgrep'
 endif
 map <leader>g :Ack 
+map <leader>cc :cclose<cr>
+map <leader>co :cope<cr>
 map <leader>n :cn<cr>
 map <leader>N :cp<cr>
 
