@@ -4,9 +4,10 @@ Chaoya Li's vim configurations
 
 ## Assumptions
 
- * Vim folder is `~/.vimconf`
- * Vim plugin folder is `~/.vimplug`
  * Leader key is `,`
+ * Vim folder is `~/.vimconf`
+   * Plugin folder is `~/.vimconf/vimplug`
+   * Undo folder is `~/.vimconf/vimundo`
 
 ## Install
 
