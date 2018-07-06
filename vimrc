@@ -9,6 +9,10 @@ Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'tpope/vim-commentary'
+Plug 'w0rp/ale'
+Plug 'posva/vim-vue'
 call plug#end()
 
 " Vim configuration
@@ -45,6 +49,8 @@ set tabstop=2
 set t_vb=
 set undodir=~/.vimconf/vimundo
 set undofile
+set wildmenu
+set wildmode=longest,full
 set whichwrap+=<,>,h,l
 cnoreabbrev W w
 map <silent> <leader>w :w !sudo tee % > /dev/null<cr>
