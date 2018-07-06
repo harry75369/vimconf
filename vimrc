@@ -3,6 +3,7 @@ set runtimepath+=~/.vimconf
 " Plugin loading
 call plug#begin('~/.vimplug')
 Plug 'scrooloose/nerdtree'
+Plug 'mileszs/ack.vim'
 call plug#end()
 
 " Vim configuration
@@ -13,3 +14,9 @@ autocmd! bufwritepost ~/.vimconf/vimrc source ~/.vimconf/vimrc
 map <leader>f :NERDTreeToggle<CR>
 map <leader>F :NERDTreeFind<CR>
 let g:NERDTreeQuitOnOpen=1
+
+" Plugin configuration: ack.vim
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+map <leader>g :Ack 
