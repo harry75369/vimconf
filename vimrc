@@ -9,6 +9,8 @@ call plug#end()
 " Vim configuration
 let mapleader=','
 autocmd! bufwritepost ~/.vimconf/vimrc source ~/.vimconf/vimrc
+set list
+set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
 
 " Plugin configuration: NERDTree
 map <leader>f :NERDTreeToggle<CR>
