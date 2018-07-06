@@ -9,8 +9,14 @@ call plug#end()
 " Vim configuration
 let mapleader=','
 autocmd! bufwritepost ~/.vimconf/vimrc source ~/.vimconf/vimrc
+filetype plugin on
+filetype indent on
 set list
 set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
+set number
+set scrolloff=5
+cnoreabbrev W w
+map <leader>w :w !sudo tee % > /dev/null<cr>
 
 " Plugin configuration: NERDTree
 map <leader>f :NERDTreeToggle<CR>
