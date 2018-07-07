@@ -109,7 +109,6 @@ nmap <script> <silent> <leader>l :call ToggleLocationList()<CR>
 nmap <script> <silent> <leader>q :call ToggleQuickfixList()<CR>
 
 " Plugin configuration: ale
-let g:ale_fix_on_save=1
 let g:ale_fixers=['prettier']
 let g:ale_set_signs=0
 map <leader>d :ALEGoToDefinition<cr>
