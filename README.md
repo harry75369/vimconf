@@ -12,7 +12,7 @@ Chaoya Li's vim configurations
 ## Install
 
 - Clone this repo as `~/.vimconf` and make symbolic link `~/.vimrc` to `~/.vimconf/vimrc`
-- Install plugins using `vim -c :PlugInstall`
+- Install plugins using `vim +PlugInstall +qa 2> /dev/null`
 
 ### Dependencies
 
