@@ -16,11 +16,13 @@ Plug 'w0rp/ale'
 Plug 'posva/vim-vue'
 Plug 'leafgarland/typescript-vim'
 Plug 'kchmck/vim-coffee-script'
+Plug 'easymotion/vim-easymotion'
 call plug#end()
 
 " Vim configuration
 let mapleader=','
-autocmd! bufwritepost ~/.vimconf/vimrc source ~/.vimconf/vimrc
+autocmd! BufWritePost ~/.vimconf/vimrc source ~/.vimconf/vimrc
+autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 filetype plugin on
 filetype indent on
 syntax enable
@@ -79,7 +81,7 @@ autocmd BufWrite * :call DeleteTrailingWS()
 autocmd FileType vim let b:noDeleteTrailingWS=1
 augroup FiletypeGroup
   autocmd!
-  au BufNewFile,BufRead *.jsx set filetype=javascript.jsx
+  autocmd BufNewFile,BufRead *.jsx set filetype=javascript.jsx
 augroup END
 
 " Plugin configuration: NERDTree
