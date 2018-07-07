@@ -11,8 +11,11 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-commentary'
+Plug 'milkypostman/vim-togglelist'
 Plug 'w0rp/ale'
 Plug 'posva/vim-vue'
+Plug 'leafgarland/typescript-vim'
+Plug 'kchmck/vim-coffee-script'
 call plug#end()
 
 " Vim configuration
@@ -22,6 +25,7 @@ filetype plugin on
 filetype indent on
 syntax enable
 set autoindent
+set backspace=eol,start,indent
 set expandtab
 set fileformats=unix,dos,mac
 set hlsearch
@@ -49,9 +53,11 @@ set tabstop=2
 set t_vb=
 set undodir=~/.vimconf/vimundo
 set undofile
+set updatetime=100
 set wildmenu
 set wildmode=longest,full
 set whichwrap+=<,>,h,l
+cnoreabbrev Q q
 cnoreabbrev W w
 map <silent> <leader>w :w !sudo tee % > /dev/null<cr>
 map <silent> <leader><cr> :nohlsearch<cr>
@@ -59,8 +65,8 @@ map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
-map <silent> <leader>p :setlocal paste!<cr>
-map <silent> <leader>s :setlocal spell!<cr>
+map <silent> <leader>P :setlocal paste!<cr>
+map <silent> <leader>S :setlocal spell!<cr>
 func! DeleteTrailingWS()
   if exists('b:noDeleteTrailingWS')
     return
@@ -71,6 +77,10 @@ func! DeleteTrailingWS()
 endfunc
 autocmd BufWrite * :call DeleteTrailingWS()
 autocmd FileType vim let b:noDeleteTrailingWS=1
+augroup FiletypeGroup
+  autocmd!
+  au BufNewFile,BufRead *.jsx set filetype=javascript.jsx
+augroup END
 
 " Plugin configuration: NERDTree
 map <leader>f :NERDTreeToggle<CR>
@@ -82,10 +92,6 @@ if executable('ag')
   let g:ackprg='ag --vimgrep'
 endif
 map <leader>g :Ack 
-map <leader>cc :cclose<cr>
-map <leader>co :cope<cr>
-map <leader>n :cn<cr>
-map <leader>N :cp<cr>
 
 " Plugin configuration: gruvbox
 colorscheme gruvbox
@@ -97,3 +103,14 @@ let g:airline_powerline_fonts=1
 " Plugin configuration: fugitive.vim
 map <leader>gd :Gdiff<cr>
 map <leader>gb :Gblame<cr>
+
+" Plugin configuration: togglelist.vim
+nmap <script> <silent> <leader>l :call ToggleLocationList()<CR>
+nmap <script> <silent> <leader>q :call ToggleQuickfixList()<CR>
+
+" Plugin configuration: ale
+let g:ale_fix_on_save=1
+let g:ale_fixers=['prettier']
+let g:ale_set_signs=0
+map <leader>d :ALEGoToDefinition<cr>
+map <leader>p :ALEFix<cr>
