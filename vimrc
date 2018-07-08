@@ -98,6 +98,7 @@ map <leader>g :Ack
 " Plugin configuration: gruvbox
 colorscheme gruvbox
 highlight Normal ctermbg=none
+set background=dark
 
 " Plugin configuration: vim-airline
 let g:airline_powerline_fonts=1
