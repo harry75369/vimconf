@@ -111,7 +111,9 @@ nmap <script> <silent> <leader>l :call ToggleLocationList()<CR>
 nmap <script> <silent> <leader>q :call ToggleQuickfixList()<CR>
 
 " Plugin configuration: ale
-let g:ale_fixers=['prettier']
+let g:ale_fixers={
+\ 'javascript': ['prettier', 'eslint'],
+\}
 let g:ale_set_signs=0
 map <leader>d :ALEGoToDefinition<cr>
 map <leader>p :ALEFix<cr>
