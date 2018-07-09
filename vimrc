@@ -17,6 +17,8 @@ Plug 'posva/vim-vue'
 Plug 'leafgarland/typescript-vim'
 Plug 'kchmck/vim-coffee-script'
 Plug 'easymotion/vim-easymotion'
+Plug 'majutsushi/tagbar'
+Plug 'Valloric/YouCompleteMe'
 call plug#end()
 
 " Vim configuration
@@ -82,6 +84,7 @@ autocmd FileType vim let b:noDeleteTrailingWS=1
 augroup FiletypeGroup
   autocmd!
   autocmd BufNewFile,BufRead *.jsx set filetype=javascript.jsx
+  autocmd BufNewFile,BufRead *.vue set filetype=javascript.vue
 augroup END
 
 " Plugin configuration: NERDTree
@@ -97,8 +100,8 @@ map <leader>g :Ack
 
 " Plugin configuration: gruvbox
 colorscheme gruvbox
-highlight Normal ctermbg=none
 set background=dark
+highlight Normal ctermbg=none
 
 " Plugin configuration: vim-airline
 let g:airline_powerline_fonts=1
@@ -118,3 +121,14 @@ let g:ale_fixers={
 let g:ale_set_signs=0
 map <leader>d :ALEGoToDefinition<cr>
 map <leader>p :ALEFix<cr>
+
+" Plugin configuration: tagbar
+map <leader>t :TagbarToggle<CR>
+
+" Plugin configuration: YouCompleteMe
+if has('python3')
+  silent! python3 1
+endif
+if has('macunix')
+  let g:clang_library_path='/usr/local/Cellar/llvm/6.0.1/lib/libclang.dylib'
+endif
