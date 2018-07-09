@@ -132,3 +132,4 @@ endif
 if has('macunix')
   let g:clang_library_path='/usr/local/Cellar/llvm/6.0.1/lib/libclang.dylib'
 endif
+let g:ycm_autoclose_preview_window_after_insertion=1
