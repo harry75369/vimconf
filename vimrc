@@ -132,7 +132,19 @@ if has('python3')
 endif
 if has('macunix')
   let g:clang_library_path='/usr/local/Cellar/llvm/6.0.1/lib/libclang.dylib'
+  let g:ycm_global_ycm_extra_conf='/Users/harry/.ycm_extra_conf.py'
+  let g:ycm_filter_diagnostics={
+  \  "cpp": {
+  \    "regex": [
+  \      ".*__builtin_ia32_pavgw128.*",
+  \      ".*__builtin_ia32_pavgb128.*",
+  \      ".*no member named '(signbit|fpclassify|isfinite|isinf|isnan|isnormal|isgreater|isgreaterequal|isless|islessequal|islessgreater|isunordered)' in the global namespace.*"
+  \    ],
+  \  },
+  \}
 endif
 let g:ycm_autoclose_preview_window_after_insertion=1
 let g:ycm_always_populate_location_list=1
 let g:ycm_enable_diagnostic_signs=0
+let g:ycm_confirm_extra_conf=0
+map <leader>r :YcmForceCompileAndDiagnostics<cr>
