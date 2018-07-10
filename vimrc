@@ -117,6 +117,7 @@ nmap <script> <silent> <leader>q :call ToggleQuickfixList()<CR>
 " Plugin configuration: ale
 let g:ale_fixers={
 \ 'javascript': ['prettier', 'eslint'],
+\ 'cpp': ['clang-format'],
 \}
 let g:ale_set_signs=0
 map <leader>d :ALEGoToDefinition<cr>
@@ -133,3 +134,5 @@ if has('macunix')
   let g:clang_library_path='/usr/local/Cellar/llvm/6.0.1/lib/libclang.dylib'
 endif
 let g:ycm_autoclose_preview_window_after_insertion=1
+let g:ycm_always_populate_location_list=1
+let g:ycm_enable_diagnostic_signs=0
