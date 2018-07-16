@@ -39,7 +39,7 @@ set lazyredraw
 set list
 set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
 set matchtime=2
-set mouse=n
+set mouse=a
 set noerrorbells
 set novisualbell
 set nobackup
