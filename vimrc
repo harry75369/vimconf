@@ -54,6 +54,7 @@ set smartcase
 set smartindent
 set smarttab
 set tabstop=2
+set ttymouse=xterm2
 set t_vb=
 set undodir=~/.vimconf/vimundo
 set undofile
