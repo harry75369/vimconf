@@ -72,6 +72,7 @@ map <C-h> <C-W>h
 map <C-l> <C-W>l
 map <silent> <leader>P :setlocal paste!<cr>
 map <silent> <leader>S :setlocal spell!<cr>
+map <silent> <leader>m :only<cr>
 func! DeleteTrailingWS()
   if exists('b:noDeleteTrailingWS')
     return
