@@ -70,9 +70,9 @@ map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
+map <silent> <leader>m :only<cr>
 map <silent> <leader>P :setlocal paste!<cr>
 map <silent> <leader>S :setlocal spell!<cr>
-map <silent> <leader>m :only<cr>
 func! DeleteTrailingWS()
   if exists('b:noDeleteTrailingWS')
     return
@@ -121,6 +121,7 @@ let g:ale_fixers={
 \ 'cpp': ['clang-format'],
 \ 'javascript': ['prettier', 'eslint'],
 \ 'markdown': ['prettier'],
+\ 'python': ['autopep8'],
 \}
 let g:ale_set_signs=0
 map <leader>d :ALEGoToDefinition<cr>
