@@ -99,6 +99,7 @@ if executable('ag')
   let g:ackprg='ag --vimgrep'
 endif
 map <leader>g :Ack 
+map <leader>G :Ack <cword><CR>
 
 " Plugin configuration: gruvbox
 colorscheme gruvbox
