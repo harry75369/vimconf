@@ -87,6 +87,7 @@ augroup FiletypeGroup
   autocmd!
   autocmd BufNewFile,BufRead *.jsx set filetype=javascript.jsx
   autocmd BufNewFile,BufRead *.vue set filetype=javascript.vue
+  autocmd BufNewFile,BufRead *.json set filetype=javascript.json
 augroup END
 
 " Plugin configuration: NERDTree
