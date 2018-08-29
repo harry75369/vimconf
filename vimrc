@@ -132,6 +132,7 @@ map <leader>p :ALEFix<cr>
 
 " Plugin configuration: tagbar
 map <leader>t :TagbarToggle<CR>
+let g:tagbar_sort=0
 
 " Plugin configuration: YouCompleteMe
 if has('python3')
