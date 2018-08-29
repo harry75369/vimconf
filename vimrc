@@ -71,6 +71,7 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 map <silent> <leader>m :only<cr>
+map <silent> <leader>c :close<cr>
 map <silent> <leader>P :setlocal paste!<cr>
 map <silent> <leader>S :setlocal spell!<cr>
 func! DeleteTrailingWS()
