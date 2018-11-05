@@ -135,12 +135,13 @@ map <leader>t :TagbarToggle<CR>
 let g:tagbar_sort=0
 
 " Plugin configuration: YouCompleteMe
+let g:ycm_global_ycm_extra_conf='~/.vimconf/ycm_extra_conf.py'
 if has('python3')
   silent! python3 1
 endif
 if has('macunix')
   let g:clang_library_path='/usr/local/Cellar/llvm/6.0.1/lib/libclang.dylib'
-  let g:ycm_global_ycm_extra_conf='/Users/harry/.ycm_extra_conf.py'
+  "let g:ycm_global_ycm_extra_conf='/Users/harry/.ycm_extra_conf.py'
   let g:ycm_filter_diagnostics={
   \  "cpp": {
   \    "regex": [
