@@ -90,6 +90,10 @@ augroup FiletypeGroup
   autocmd BufNewFile,BufRead *.vue set filetype=javascript.vue
   autocmd BufNewFile,BufRead *.json set filetype=javascript.json
 augroup END
+" Turn on 24-bit colors if available
+if has("termguicolors")
+  set termguicolors
+endif
 
 " Plugin configuration: NERDTree
 map <leader>f :NERDTreeToggle<CR>
