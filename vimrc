@@ -92,6 +92,8 @@ augroup FiletypeGroup
 augroup END
 " Turn on 24-bit colors if available
 if has("termguicolors")
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
   set termguicolors
 endif
 
@@ -110,7 +112,8 @@ map <leader>G :Ack <cword><CR>
 " Plugin configuration: gruvbox
 colorscheme gruvbox
 set background=dark
-highlight Normal ctermbg=none
+highlight Normal ctermbg=NONE
+highlight Normal guibg=NONE
 
 " Plugin configuration: vim-airline
 let g:airline_powerline_fonts=1
