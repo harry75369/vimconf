@@ -2,6 +2,7 @@ import ycm_core
 from os import getcwd
 from os.path import abspath, join, isabs, normpath, exists, splitext, \
         dirname
+import commands
 
 ####
 # Global lists for the flags and file detection
@@ -16,6 +17,16 @@ default_flags = [
     "-I/usr/include",
     "-I/usr/local/include",
 ]
+
+def append_default_includes_from_compiler():
+    cmd = "`gcc -print-prog-name=cc1plus` -v /dev/null -o /dev/null 2>&1 | sed -n '/> search starts here/,/End of search list/p' | sed '1d' | sed '$d' | awk '{print $1;}'"
+    ret, res = commands.getstatusoutput(cmd)
+    if ret == 0:
+        for include in res.split('\n'):
+            default_flags.append("-I" + include)
+
+append_default_includes_from_compiler()
+
 
 ##
 # C header extensions
