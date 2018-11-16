@@ -53,11 +53,13 @@ YouCompleteMe needs to be compiled after installation. Go to `.vimconf/vimplug/Y
 - Turn off search highlight: `<leader>Enter`
 - Navigation within windows: `<Ctrl>-<h/j/k/l>`
 - Maximize current window: `<leader>m`
+- Close current window: `<leader>c`
 - Toggle paste mode: `<leader>P`
 - Toggle spell check: `<leader>S`
 - Toggle NETDTree: `<leader>f`
 - Find current file in NETDTree: `<leader>F`
 - Search pattern in files: `<leader>g`
+- Search current pattern under cursor in files: `<leader>G`
 - Show git diff: `<leader>gd`
 - Show git blame: `<leader>gb`
 - Toggle quickfix window: `<leader>q`
@@ -65,6 +67,9 @@ YouCompleteMe needs to be compiled after installation. Go to `.vimconf/vimplug/Y
 - Go to definition under cursor: `<leader>d`
 - Format code with prettier: `<leader>p`
 - Toggle tagbar window: `<leader>t`
+- Refresh YCM diagnostics: `<leader>r`
+- Go to forward word: `<leader><leader>w`
+- Go to backward word: `<leader><leader>b`
 
 ## Tips for tmux
 

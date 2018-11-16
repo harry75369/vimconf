@@ -4,7 +4,7 @@ set runtimepath+=~/.vimconf
 call plug#begin('~/.vimconf/vimplug')
 Plug 'scrooloose/nerdtree'
 Plug 'mileszs/ack.vim'
-Plug 'ervandew/supertab'
+Plug 'ervandew/supertab' " Fall-back completion solution
 Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
 Plug 'airblade/vim-gitgutter'
