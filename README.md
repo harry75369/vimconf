@@ -40,7 +40,12 @@ ln -s ~/.vimconf/.eslintrc.js ~/.eslintrc.js
 ln -s ~/.vimconf/.prettierrc.js ~/.prettierrc.js
 ```
 
-In order for YouCompleteMe to work in C/C++ projects, please copy its configuration file `~/.vimconf/vimplug/YouCompleteMe/third_party/ycmd/examples/.ycm_extra_conf.py` to your home folder or project root.
+### YCM configuration
+
+YouCompleteMe needs to be compiled after installation. Go to `.vimconf/vimplug/YouCompleteMe` and execute the following command to compile completion support for Go, Javascript, Rust and C/C++.
+```
+./install.py --go-completer --js-completer  --rust-completer --clang-completer
+```
 
 ## Usage
 
@@ -60,3 +65,12 @@ In order for YouCompleteMe to work in C/C++ projects, please copy its configurat
 - Go to definition under cursor: `<leader>d`
 - Format code with prettier: `<leader>p`
 - Toggle tagbar window: `<leader>t`
+
+## Tips for tmux
+
+If you encounter color problems with tmux, add the following to `.tmux.conf`
+```
+set-option -g default-terminal "screen-256color"
+set-option -sa terminal-overrides ",xterm*:Tc"
+```
+
