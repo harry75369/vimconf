@@ -56,6 +56,7 @@ set smarttab
 set tabstop=2
 set ttymouse=xterm2
 set t_vb=
+set t_Cs=
 set undodir=~/.vimconf/vimundo
 set undofile
 set updatetime=100
