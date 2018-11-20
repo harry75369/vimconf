@@ -81,6 +81,6 @@ YouCompleteMe needs to be compiled after installation. Go to `.vimconf/vimplug/Y
 If you encounter color problems with tmux, add the following to `.tmux.conf`
 ```
 set-option -g default-terminal "screen-256color"
-set-option -sa terminal-overrides ",xterm*:Tc"
+set-option -ga terminal-overrides ",*256col*:Tc"
 ```
 
