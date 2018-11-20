@@ -49,7 +49,8 @@ YouCompleteMe needs to be compiled after installation. Go to `.vimconf/vimplug/Y
 
 ## Usage
 
-- Save file with sudo right: `<leader>w`
+- Quick save file: `<leader>w`
+- Save file with sudo right: `<leader>W`
 - Turn off search highlight: `<leader>Enter`
 - Navigation within windows: `<Ctrl>-<h/j/k/l>`
 - Maximize current window: `<leader>m`
@@ -70,6 +71,10 @@ YouCompleteMe needs to be compiled after installation. Go to `.vimconf/vimplug/Y
 - Refresh YCM diagnostics: `<leader>r`
 - Go to forward word: `<leader><leader>w`
 - Go to backward word: `<leader><leader>b`
+- Open list for buffers: `<leader>b`
+- Open list for MRU files: `<Ctrl>-p`
+  - Choose with `<Ctrl>-j/k`
+  - Open with `<Ctrl>-t/v/x/o`
 
 ## Tips for tmux
 

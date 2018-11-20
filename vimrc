@@ -65,7 +65,8 @@ set wildmode=longest,full
 set whichwrap+=<,>,h,l
 cnoreabbrev Q q
 cnoreabbrev W w
-map <silent> <leader>w :w !sudo tee % > /dev/null<cr>
+map <silent> <leader>w :w<cr>
+map <silent> <leader>W :w !sudo tee % > /dev/null<cr>
 map <silent> <leader><cr> :nohlsearch<cr>
 map <C-j> <C-W>j
 map <C-k> <C-W>k
@@ -122,6 +123,10 @@ let g:airline_powerline_fonts=1
 " Plugin configuration: fugitive.vim
 map <leader>gd :Gdiff<cr>
 map <leader>gb :Gblame<cr>
+
+" Plugin configuration: ctrlp.vim
+let g:ctrlp_cmd='CtrlPMRU'
+map <leader>b :CtrlPBuffer<cr>
 
 " Plugin configuration: togglelist.vim
 nmap <script> <silent> <leader>l :call ToggleLocationList()<CR>
