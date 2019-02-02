@@ -18,6 +18,7 @@ Plug 'leafgarland/typescript-vim'
 Plug 'kchmck/vim-coffee-script'
 Plug 'easymotion/vim-easymotion'
 Plug 'majutsushi/tagbar'
+Plug 'vim-scripts/a.vim'
 Plug 'Valloric/YouCompleteMe'
 call plug#end()
 
