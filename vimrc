@@ -103,6 +103,7 @@ endif
 map <leader>f :NERDTreeToggle<CR>
 map <leader>F :NERDTreeFind<CR>
 let g:NERDTreeQuitOnOpen=1
+let g:NERDTreeNodeDelimiter = "\u00a0" " temporary workaround
 
 " Plugin configuration: ack.vim
 if executable('ag')
