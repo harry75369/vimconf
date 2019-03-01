@@ -2,8 +2,13 @@ import ycm_core
 from os import getcwd
 from os.path import abspath, join, isabs, normpath, exists, splitext, \
         dirname
-import commands
 import platform
+import sys
+version = sys.version_info
+if version.major == 3:
+    import subprocess as commands
+else:
+    import commands
 
 ####
 # Global lists for the flags and file detection
