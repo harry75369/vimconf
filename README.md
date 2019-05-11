@@ -32,6 +32,7 @@ The following dependencies should be installed externally:
 - `clang`
   - `clang-format`
   - `libclang`
+- `rustfmt`
 
 Make symbolic links as follows to configure some of these dependencies
 

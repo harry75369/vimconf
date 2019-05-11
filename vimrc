@@ -140,6 +140,7 @@ let g:ale_fixers={
 \ 'javascript': ['prettier', 'eslint'],
 \ 'markdown': ['prettier'],
 \ 'python': ['autopep8'],
+\ 'rust': ['rustfmt'],
 \}
 let g:ale_set_signs=0
 map <leader>d :ALEGoToDefinition<cr>
