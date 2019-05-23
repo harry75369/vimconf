@@ -20,6 +20,8 @@ Plug 'easymotion/vim-easymotion'
 Plug 'majutsushi/tagbar'
 Plug 'vim-scripts/a.vim'
 Plug 'Valloric/YouCompleteMe'
+Plug 'LucHermitte/lh-vim-lib'
+Plug 'LucHermitte/VimFold4C'
 call plug#end()
 
 " Vim configuration
@@ -171,3 +173,16 @@ let g:ycm_always_populate_location_list=1
 let g:ycm_enable_diagnostic_signs=0
 let g:ycm_confirm_extra_conf=0
 map <leader>r :YcmForceCompileAndDiagnostics<cr>
+
+" Plugin configuration:
+let g:fold_options = {
+ \ 'fallback_method' : { 'line_threshold' : 2000, 'method' : 'syntax' },
+ \ 'fold_blank': 0,
+ \ 'fold_includes': 0,
+ \ 'max_foldline_length': 'win',
+ \ 'merge_comments' : 1,
+ \ 'show_if_and_else': 1,
+ \ 'strip_namespaces': 1,
+ \ 'strip_template_arguments': 1
+ \}
+set foldlevelstart=99999
