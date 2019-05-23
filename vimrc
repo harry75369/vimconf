@@ -22,6 +22,7 @@ Plug 'vim-scripts/a.vim'
 Plug 'Valloric/YouCompleteMe'
 Plug 'LucHermitte/lh-vim-lib'
 Plug 'LucHermitte/VimFold4C'
+Plug 'harry75369/grayout.vim'
 call plug#end()
 
 " Vim configuration
@@ -186,3 +187,7 @@ let g:fold_options = {
  \ 'strip_template_arguments': 1
  \}
 set foldlevelstart=99999
+
+" Plugin configuration: grayout.vim
+autocmd FileType cpp GrayoutUpdate
+autocmd BufWrite *.[ch]{,pp,xx}\|*.cc|*.hh :GrayoutUpdate
