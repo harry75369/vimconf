@@ -20,8 +20,8 @@ Plug 'easymotion/vim-easymotion'
 Plug 'majutsushi/tagbar'
 Plug 'vim-scripts/a.vim'
 Plug 'Valloric/YouCompleteMe'
-Plug 'LucHermitte/lh-vim-lib'
-Plug 'LucHermitte/VimFold4C'
+"Plug 'LucHermitte/lh-vim-lib'
+"Plug 'LucHermitte/VimFold4C'
 Plug 'harry75369/grayout.vim'
 call plug#end()
 
@@ -176,17 +176,17 @@ let g:ycm_confirm_extra_conf=0
 map <leader>r :YcmForceCompileAndDiagnostics<cr>
 
 " Plugin configuration:
-let g:fold_options = {
- \ 'fallback_method' : { 'line_threshold' : 2000, 'method' : 'syntax' },
- \ 'fold_blank': 0,
- \ 'fold_includes': 0,
- \ 'max_foldline_length': 'win',
- \ 'merge_comments' : 1,
- \ 'show_if_and_else': 1,
- \ 'strip_namespaces': 1,
- \ 'strip_template_arguments': 1
- \}
-set foldlevelstart=99999
+"let g:fold_options = {
+" \ 'fallback_method' : { 'line_threshold' : 2000, 'method' : 'syntax' },
+" \ 'fold_blank': 0,
+" \ 'fold_includes': 0,
+" \ 'max_foldline_length': 'win',
+" \ 'merge_comments' : 1,
+" \ 'show_if_and_else': 1,
+" \ 'strip_namespaces': 1,
+" \ 'strip_template_arguments': 1
+" \}
+"set foldlevelstart=99999
 
 " Plugin configuration: grayout.vim
 autocmd FileType cpp GrayoutUpdate
