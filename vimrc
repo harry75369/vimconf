@@ -23,6 +23,7 @@ Plug 'Valloric/YouCompleteMe'
 "Plug 'LucHermitte/lh-vim-lib'
 "Plug 'LucHermitte/VimFold4C'
 Plug 'harry75369/grayout.vim'
+Plug 'rust-lang/rust.vim'
 call plug#end()
 
 " Vim configuration
