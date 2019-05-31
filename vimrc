@@ -82,13 +82,6 @@ map <silent> <leader>m :only<cr>
 map <silent> <leader>c :close<cr>
 map <silent> <leader>P :setlocal paste!<cr>
 map <silent> <leader>S :setlocal spell!<cr>
-""inoremap ( ()<Left>
-inoremap < <><Left>
-inoremap [ []<Left>
-inoremap { {}<Left>
-inoremap " ""<Left>
-inoremap ' ''<Left>
-inoremap ` ``<Left>
 func! DeleteTrailingWS()
   if exists('b:noDeleteTrailingWS')
     return
