@@ -17,13 +17,14 @@ Plug 'posva/vim-vue'
 Plug 'leafgarland/typescript-vim'
 Plug 'kchmck/vim-coffee-script'
 Plug 'easymotion/vim-easymotion'
-Plug 'majutsushi/tagbar'
+Plug 'harry75369/tagbar'
 Plug 'vim-scripts/a.vim'
 Plug 'Valloric/YouCompleteMe'
 "Plug 'LucHermitte/lh-vim-lib'
 "Plug 'LucHermitte/VimFold4C'
 Plug 'harry75369/grayout.vim'
 Plug 'rust-lang/rust.vim'
+Plug 'dart-lang/dart-vim-plugin'
 call plug#end()
 
 " Vim configuration
@@ -192,3 +193,25 @@ map <leader>r :YcmForceCompileAndDiagnostics<cr>
 " Plugin configuration: grayout.vim
 autocmd FileType cpp GrayoutUpdate
 autocmd BufWrite *.[ch]{,pp,xx}\|*.cc|*.hh :GrayoutUpdate
+
+" Plugin configuration: rust.vim
+let g:rust_use_custom_ctags_defs = 1
+if !exists('g:tagbar_type_rust')
+   let g:tagbar_type_rust = {
+       \ 'ctagstype' : 'rust',
+       \ 'kinds' : [
+         \'M:macro,Macro Definition',
+         \'P:method,A method',
+         \'c:implementation,implementation',
+         \'e:enumerator,An enum variant',
+         \'f:function,Function',
+         \'g:enum,Enum',
+         \'i:interface,trait interface',
+         \'m:field,A struct field',
+         \'n:module,module',
+         \'s:struct,structural type',
+         \'t:typedef,Type Alias',
+         \'v:variable,Global variable',
+       \ ]
+   \ }
+ endif
