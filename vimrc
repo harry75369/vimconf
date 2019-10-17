@@ -69,6 +69,7 @@ set updatetime=100
 set wildmenu
 set wildmode=longest,full
 set whichwrap+=<,>,h,l
+set matchpairs+=<:>
 cnoreabbrev Q q
 cnoreabbrev W w
 map <silent> <leader>w :w<cr>
