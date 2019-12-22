@@ -50,6 +50,7 @@ set noerrorbells
 set novisualbell
 set nobackup
 set noswapfile
+set nowrap
 set nowritebackup
 set number
 set scrolloff=5
