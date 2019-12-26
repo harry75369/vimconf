@@ -71,9 +71,9 @@ set wildmenu
 set wildmode=longest,full
 set whichwrap+=<,>,h,l
 set matchpairs+=<:>
-cnoreabbrev Q q
+cnoreabbrev Q q!
 cnoreabbrev W w
-map <silent> <leader>w :w<cr>
+map <silent> <leader>w :set wrap!<cr>
 map <silent> <leader>W :w !sudo tee % > /dev/null<cr>
 map <silent> <leader><cr> :nohlsearch<cr>
 map <C-j> <C-W>j
