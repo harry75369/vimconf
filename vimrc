@@ -178,6 +178,7 @@ let g:ycm_always_populate_location_list=1
 let g:ycm_enable_diagnostic_signs=0
 let g:ycm_confirm_extra_conf=0
 map <leader>r :YcmForceCompileAndDiagnostics<cr>
+map <leader>i :YcmCompleter GetType<cr>
 
 " Plugin configuration:
 "let g:fold_options = {
