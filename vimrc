@@ -110,7 +110,7 @@ endif
 " Plugin configuration: NERDTree
 map <leader>f :NERDTreeToggle<CR>
 map <leader>F :NERDTreeFind<CR>
-let g:NERDTreeQuitOnOpen=1
+let g:NERDTreeQuitOnOpen=0
 let g:NERDTreeNodeDelimiter = "\u00a0" " temporary workaround
 
 " Plugin configuration: ack.vim
@@ -177,8 +177,10 @@ let g:ycm_autoclose_preview_window_after_insertion=1
 let g:ycm_always_populate_location_list=1
 let g:ycm_enable_diagnostic_signs=0
 let g:ycm_confirm_extra_conf=0
+let g:ycm_auto_hover=''
 map <leader>r :YcmForceCompileAndDiagnostics<cr>
 map <leader>i :YcmCompleter GetType<cr>
+nmap <leader>h <plug>(YCMHover)
 
 " Plugin configuration:
 "let g:fold_options = {
