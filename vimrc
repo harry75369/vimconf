@@ -50,7 +50,7 @@ set noerrorbells
 set novisualbell
 set nobackup
 set noswapfile
-set nowrap
+"set nowrap
 set nowritebackup
 set number
 set scrolloff=5
@@ -94,6 +94,7 @@ func! DeleteTrailingWS()
 endfunc
 autocmd BufWrite * :call DeleteTrailingWS()
 autocmd FileType vim let b:noDeleteTrailingWS=1
+autocmd FileType cpp set foldmethod=syntax
 augroup FiletypeGroup
   autocmd!
   autocmd BufNewFile,BufRead *.jsx set filetype=javascript.jsx
