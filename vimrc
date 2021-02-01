@@ -20,11 +20,10 @@ Plug 'easymotion/vim-easymotion'
 Plug 'harry75369/tagbar'
 Plug 'vim-scripts/a.vim'
 Plug 'Valloric/YouCompleteMe'
-"Plug 'LucHermitte/lh-vim-lib'
-"Plug 'LucHermitte/VimFold4C'
 Plug 'harry75369/grayout.vim'
 Plug 'rust-lang/rust.vim'
 Plug 'dart-lang/dart-vim-plugin'
+Plug 'pseewald/vim-anyfold'
 call plug#end()
 
 " Vim configuration
@@ -94,7 +93,7 @@ func! DeleteTrailingWS()
 endfunc
 autocmd BufWrite * :call DeleteTrailingWS()
 autocmd FileType vim let b:noDeleteTrailingWS=1
-autocmd FileType cpp set foldmethod=syntax
+"autocmd FileType cpp set foldmethod=syntax " this will cause vim very slow!
 augroup FiletypeGroup
   autocmd!
   autocmd BufNewFile,BufRead *.jsx set filetype=javascript.jsx
@@ -183,19 +182,6 @@ map <leader>r :YcmForceCompileAndDiagnostics<cr>
 map <leader>i :YcmCompleter GetType<cr>
 nmap <leader>h <plug>(YCMHover)
 
-" Plugin configuration:
-"let g:fold_options = {
-" \ 'fallback_method' : { 'line_threshold' : 2000, 'method' : 'syntax' },
-" \ 'fold_blank': 0,
-" \ 'fold_includes': 0,
-" \ 'max_foldline_length': 'win',
-" \ 'merge_comments' : 1,
-" \ 'show_if_and_else': 1,
-" \ 'strip_namespaces': 1,
-" \ 'strip_template_arguments': 1
-" \}
-"set foldlevelstart=99999
-
 " Plugin configuration: grayout.vim
 autocmd FileType cpp GrayoutUpdate
 autocmd BufWrite *.[ch]{,pp,xx}\|*.cc|*.hh :GrayoutUpdate
@@ -221,3 +207,20 @@ if !exists('g:tagbar_type_rust')
        \ ]
    \ }
  endif
+
+" Plugin configuration: vim-anyfold
+set foldlevel=1
+" activate anyfold by default
+augroup anyfold
+    autocmd!
+    autocmd Filetype cpp AnyFoldActivate
+augroup END
+" disable anyfold for large files
+let g:LargeFile = 1000000 " file is large if size greater than 1MB
+autocmd BufReadPre,BufRead * let f=getfsize(expand("<afile>")) | if f > g:LargeFile || f == -2 | call LargeFile() | endif
+function LargeFile()
+    augroup anyfold
+        autocmd! " remove AnyFoldActivate
+        autocmd Filetype cpp setlocal foldmethod=indent " fall back to indent folding
+    augroup END
+endfunction
