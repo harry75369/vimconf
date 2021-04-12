@@ -130,8 +130,8 @@ highlight Normal guibg=NONE
 let g:airline_powerline_fonts=1
 
 " Plugin configuration: fugitive.vim
-map <leader>gd :Gdiff<cr>
-map <leader>gb :Gblame<cr>
+map <leader>gd :Git diff<cr>
+map <leader>gb :Git blame<cr>
 
 " Plugin configuration: ctrlp.vim
 let g:ctrlp_cmd='CtrlPMRU'
