@@ -24,6 +24,7 @@ Plug 'harry75369/grayout.vim'
 Plug 'rust-lang/rust.vim'
 Plug 'dart-lang/dart-vim-plugin'
 Plug 'pseewald/vim-anyfold'
+Plug 'junegunn/vim-easy-align'
 call plug#end()
 
 " Vim configuration
@@ -224,3 +225,9 @@ function LargeFile()
         autocmd Filetype cpp setlocal foldmethod=indent " fall back to indent folding
     augroup END
 endfunction
+
+" Plugin configuration: vim-easy-align
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
