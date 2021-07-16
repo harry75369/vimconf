@@ -97,7 +97,7 @@ cpp_additional_flags = [
     "c++",
 
     # Use the latest standard if possible.
-    "-std=c++11",
+    "-std=c++17",
 ]
 
 
@@ -744,3 +744,7 @@ def FlagsForFile(file_name, **kwargs):
         # No files exists. Use the default flags.
         return parse_default_flags(file_name)
 
+#def Settings( **kwargs ):
+#  return {
+#    'interpreter_path': '/usr/bin/python3'
+#  }
