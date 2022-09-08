@@ -34,6 +34,7 @@ autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "norm
 filetype plugin on
 filetype indent on
 syntax enable
+set fileencodings=ucs-bom,utf-8,chinese,japanese,default,latin1
 set autoindent
 set backspace=eol,start,indent
 set expandtab
@@ -144,6 +145,7 @@ nmap <script> <silent> <leader>q :call ToggleQuickfixList()<CR>
 
 " Plugin configuration: ale
 let g:ale_fixers={
+\ 'c': ['clang-format'],
 \ 'cpp': ['clang-format'],
 \ 'javascript': ['prettier', 'eslint'],
 \ 'markdown': ['prettier'],
@@ -210,7 +212,7 @@ if !exists('g:tagbar_type_rust')
  endif
 
 " Plugin configuration: vim-anyfold
-set foldlevel=1
+set foldlevel=0
 " activate anyfold by default
 augroup anyfold
     autocmd!
@@ -219,7 +221,7 @@ augroup END
 " disable anyfold for large files
 let g:LargeFile = 1000000 " file is large if size greater than 1MB
 autocmd BufReadPre,BufRead * let f=getfsize(expand("<afile>")) | if f > g:LargeFile || f == -2 | call LargeFile() | endif
-function LargeFile()
+function! LargeFile()
     augroup anyfold
         autocmd! " remove AnyFoldActivate
         autocmd Filetype cpp setlocal foldmethod=indent " fall back to indent folding
