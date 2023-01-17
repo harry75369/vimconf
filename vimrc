@@ -96,6 +96,7 @@ endfunc
 autocmd BufWrite * :call DeleteTrailingWS()
 autocmd FileType vim let b:noDeleteTrailingWS=1
 "autocmd FileType cpp set foldmethod=syntax " this will cause vim very slow!
+autocmd FileType json set foldmethod=syntax
 augroup FiletypeGroup
   autocmd!
   autocmd BufNewFile,BufRead *.jsx set filetype=javascript.jsx
@@ -151,6 +152,7 @@ let g:ale_fixers={
 \ 'markdown': ['prettier'],
 \ 'python': ['autopep8'],
 \ 'rust': ['rustfmt'],
+\ 'typescriptreact': ['prettier', 'tslint'],
 \}
 let g:ale_set_signs=0
 map <leader>d :ALEGoToDefinition<cr>
