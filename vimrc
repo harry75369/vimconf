@@ -15,6 +15,7 @@ Plug 'milkypostman/vim-togglelist'
 Plug 'w0rp/ale'
 Plug 'posva/vim-vue'
 Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
 Plug 'kchmck/vim-coffee-script'
 Plug 'easymotion/vim-easymotion'
 Plug 'harry75369/tagbar'
@@ -37,6 +38,7 @@ syntax enable
 set fileencodings=ucs-bom,utf-8,chinese,japanese,default,latin1
 set autoindent
 set backspace=eol,start,indent
+set cursorcolumn
 set expandtab
 set fileformats=unix,dos,mac
 set hlsearch
@@ -149,6 +151,7 @@ let g:ale_fixers={
 \ 'c': ['clang-format'],
 \ 'cpp': ['clang-format'],
 \ 'javascript': ['prettier', 'eslint'],
+\ 'typescript': ['prettier', 'eslint'],
 \ 'markdown': ['prettier'],
 \ 'python': ['autopep8'],
 \ 'rust': ['rustfmt'],
