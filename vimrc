@@ -156,6 +156,8 @@ let g:ale_fixers={
 \ 'python': ['autopep8'],
 \ 'rust': ['rustfmt'],
 \ 'typescriptreact': ['prettier', 'tslint'],
+\ 'yaml': ['yamlfix'],
+\ 'nix': ['alejandra'],
 \}
 let g:ale_set_signs=0
 map <leader>d :ALEGoToDefinition<cr>
